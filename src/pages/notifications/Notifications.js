@@ -56,7 +56,7 @@ export default function NotificationsPage(props) {
 
   return (
     <>
-      <PageTitle title="Notifications" />
+      <PageTitle title="Patient Orders" />
       <Grid container spacing={4}>
         <ToastContainer
           className={classes.toastsContainer}
@@ -78,7 +78,25 @@ export default function NotificationsPage(props) {
           />
         </Grid>
 
+        
 
+        <Grid item xs={12}>
+            
+            <div className={classes.layoutContainer}>
+            <Typography>
+              Enter your new order:
+            </Typography>
+            <Button
+                variant="contained"
+                color="success"
+                onClick={() => handleNotificationCall("success")}
+                className={classnames(classes.notificationCallButton)}
+              >
+                Order Confirmed
+              </Button>
+        </div>
+            
+        </Grid>
 
         <Grid item xs={12}>
         <Widget disableWidgetMenu>
@@ -205,7 +223,7 @@ export default function NotificationsPage(props) {
           </Grid>
           </Widget>
         </Grid>
-        <Grid item xs={12} md={6} lg={4}>
+        {/* <Grid item xs={12} md={6} lg={4}>
           <Widget title="Notification Types Examples" disableWidgetMenu>
             <Notification
               className={classes.notificationItem}
@@ -256,8 +274,8 @@ export default function NotificationsPage(props) {
               color="info"
             />
           </Widget>
-        </Grid>
-        <Grid item xs={12} md={6} lg={4}>
+        </Grid> */}
+        {/* <Grid item xs={12} md={6} lg={4}>
           <Widget title="Notification Types Examples" disableWidgetMenu>
             <Notification
               className={classes.notificationItem}
@@ -296,8 +314,8 @@ export default function NotificationsPage(props) {
               color="info"
             />
           </Widget>
-        </Grid>
-        <Grid item xs={12} md={6} lg={4}>
+        </Grid> */}
+        {/* <Grid item xs={12} md={6} lg={4}>
           <Widget title="Notification Types Examples" disableWidgetMenu>
             <Notification
               className={classes.notificationItem}
@@ -342,7 +360,7 @@ export default function NotificationsPage(props) {
               color="info"
             />
           </Widget>
-        </Grid>
+        </Grid> */}
       </Grid>
     </>
   );
