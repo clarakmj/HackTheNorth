@@ -16,7 +16,8 @@ import useStyles from "./styles";
 
 // components
 import PageTitle from "../../components/PageTitle/PageTitle";
-
+import Widget from "../../components/Widget";
+import classnames from "classnames";
 
 // icons sets
 import "font-awesome/css/font-awesome.min.css";
@@ -120,13 +121,25 @@ export default function IconsPage() {
           <Tab label="Lab Work" classes={{ root: classes.tab }}/>
         </Tabs>
         {activeTabId === 0 && (
-          <div>
-            <Grid container spacing={2} className="icon-list">
+          
+           <Grid container spacing={4}>
+             <Grid item xs={12} md={6}>
+              <Widget title="Patient Monster, Cookie" disableWidgetMenu>
+                <div className={classes.dashedBorder}>
             {/* // ====================================================== */}
-            
+                 <Button
+                 variant="contained"
+                 color="success"
+                 className={classnames(classes.notificationCallButton)}
+                 >
+                  Open Findings 
+                 </Button>
         
+            
+                </div>
+               </Widget>
             </Grid>
-          </div>
+          </Grid>
         )}
 
         {activeTabId === 1 && (
