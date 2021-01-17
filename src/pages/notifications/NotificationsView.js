@@ -89,7 +89,7 @@ const NotificationsPage = ({ classes, ...props}) => (
         <Widget title="Notification Types Examples" disableWidgetMenu>
           <NotificationCustomComponent className={classes.notificationItem} type="report" message="New report has been received" color="secondary" />
           <NotificationCustomComponent className={classes.notificationItem} type="feedback" message="New user feedback received" color="primary" />
-          <NotificationCustomComponent className={classes.notificationItem} type="shipped" message="The item was shipped" color="success" />
+          <NotificationCustomComponent className={classes.notificationItem} type="shipped" message="The order is confirmed!" color="success" />
           <NotificationCustomComponent className={classes.notificationItem} type="message" message="The new message from user @nahawaii" color="warning" />
           <NotificationCustomComponent className={classes.notificationItem} type="upload" message="Your file is ready to upload" color="primary" />
           <NotificationCustomComponent className={classes.notificationItem} type="disc" message="The disc is full" color="info" />
@@ -99,7 +99,7 @@ const NotificationsPage = ({ classes, ...props}) => (
         <Widget title="Notification Types Examples" disableWidgetMenu>
           <NotificationCustomComponent className={classes.notificationItem} type="report" message="New report has been received" variant="rounded" color="secondary" />
           <NotificationCustomComponent className={classes.notificationItem} type="feedback" message="New user feedback received" variant="rounded" color="primary" />
-          <NotificationCustomComponent className={classes.notificationItem} type="shipped" message="The item was shipped" variant="rounded" color="success" />
+          <NotificationCustomComponent className={classes.notificationItem} type="shipped" message="The order is confirmed!" variant="rounded" color="success" />
           <NotificationCustomComponent className={classes.notificationItem} type="message" message="The new message from user @nahawaii" variant="rounded" color="warning" />
           <NotificationCustomComponent className={classes.notificationItem} type="upload" message="Your file is ready to upload" variant="rounded" color="primary" />
           <NotificationCustomComponent className={classes.notificationItem} type="disc" message="The disc is full" variant="rounded" color="info" />
