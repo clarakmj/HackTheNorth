@@ -88,7 +88,7 @@ export default compose(
         default:
           componentProps = {
             type: "shipped",
-            message: "The item was shipped",
+            message: "The order was confirmed!",
             variant: "contained",
             color: "success"
           };
