@@ -81,23 +81,21 @@ export default function NotificationsPage(props) {
         
 
         <Grid item xs={12}>
-            
+        <Widget title="New Order Entry" disableWidgetMenu>
             <div className={classes.layoutContainer}>
-            <Typography>
-              Enter your new order:
-            </Typography>
+            
             <Button
                 variant="contained"
                 color="success"
                 onClick={() => handleNotificationCall("success")}
                 className={classnames(classes.notificationCallButton)}
               >
-                Order Confirmed
+                Confirm Order 
               </Button>
         </div>
-            
+        </Widget>
         </Grid>
-
+{/* 
         <Grid item xs={12}>
         <Widget disableWidgetMenu>
           <Grid container item xs={12}>
@@ -363,7 +361,7 @@ export default function NotificationsPage(props) {
         </Grid> */}
       </Grid>
     </>
-  );
+  ); 
 
   // #############################################################
   function sendNotification(componentProps, options) {
