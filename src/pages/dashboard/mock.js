@@ -136,7 +136,8 @@ export default {
       age: "47",
       DOB: "Nov. 2, 1973",
       alert: "Flight risk",
-      status: "Active"
+      status: "Active" +
+        "n"
     },
     {
       id: 1,
