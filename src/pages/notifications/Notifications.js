@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Grid, TextField } from "@material-ui/core";
+import { Grid } from "@material-ui/core";
 import { Close as CloseIcon } from "@material-ui/icons";
 import { ToastContainer, toast } from "react-toastify";
 import SyntaxHighlighter from "react-syntax-highlighter";
@@ -15,28 +15,6 @@ import Widget from "../../components/Widget/Widget";
 import PageTitle from "../../components/PageTitle/PageTitle";
 import Notification from "../../components/Notification";
 import { Typography, Button } from "../../components/Wrappers/Wrappers";
-
-
-
-//###########################################
-import MUIDataTable from "mui-datatables";
-import Table from "../dashboard/components/Table/Table";
-
-// data
-import mock from "../dashboard/mock";
-
-const datatableData = [
-  ["Joe James", "2019-10-4", "2022-6-20", "Pending"],
-  ["John Walsh", "2019-12-27", "2024-6-23", "Active"],
-  ["Bob Herm", "2020-4-21", "2022-5-11", "Inactive"],
-  ["James Houston", "2021-7-17", "2025-11-23", "Pending"],
-  ["Prabhakar Linwood", "2015-6-15", "2021-7-26", "Active"],
-  ["Kaui Ignace", "2016-5-7", "2026-11-10", "Inactive"],
-  ["Esperanza Susanne", "2018-1-12", "2026-11-6", "Cancelled"],
-  ["Christian Birgitte", "2018-5-28", "2023-10-16", "Active"]
-];
-
-//####################################################
 
 const positions = [
   toast.POSITION.TOP_LEFT,
@@ -56,7 +34,7 @@ export default function NotificationsPage(props) {
 
   return (
     <>
-      <PageTitle title="Patient Orders" />
+      <PageTitle title="Notifications" />
       <Grid container spacing={4}>
         <ToastContainer
           className={classes.toastsContainer}
@@ -66,53 +44,6 @@ export default function NotificationsPage(props) {
           closeOnClick={false}
           progressClassName={classes.notificationProgress}
         />
-        
-        <Grid item xs={12}>
-        <MUIDataTable
-            title="Employee List"
-            data={datatableData}
-            columns={["Order Information", "Date Issued", "Ending Date", "Status"]}
-            options={{
-              filterType: "checkbox",
-            }}
-          />
-        </Grid>
-
-        
-
-        <Grid item xs={12}>
-        <Widget title="New Order Entry" disableWidgetMenu>
-            <div className={classes.layoutContainer}>
-            <input type="text" placeholder="Input order" id="myInput" width="2400" height="170"></input>
-           
-            
-            {/* <TextField
-              id="password"
-              InputProps={{
-                classes: {
-                  underline:classes.textFieldUnderline,
-                  input: classes.TextField,
-                },
-              }}
-              value={passwordValue}
-              onChange={e => setPasswordValue(e.target.value)}
-              margin="normal"
-              placeholder="Password"
-              type="password"
-              fullWidth/> */}
-
-            <Button
-                variant="contained"
-                color="success"
-                onClick={() => handleNotificationCall("success")}
-                className={classnames(classes.notificationCallButton)}
-              >
-                Confirm Order 
-              </Button>
-        </div>
-        </Widget>
-        </Grid>
-{/* 
         <Grid item xs={12}>
         <Widget disableWidgetMenu>
           <Grid container item xs={12}>
@@ -220,6 +151,7 @@ export default function NotificationsPage(props) {
   // import needed components, functions and styles
   import { ToastContainer, toast } from 'react-toastify';
   import 'react-toastify/dist/ReactToastify.css';
+
   const Page = () => {
     <div>
       <ToastContainer />
@@ -238,7 +170,7 @@ export default function NotificationsPage(props) {
           </Grid>
           </Widget>
         </Grid>
-        {/* <Grid item xs={12} md={6} lg={4}>
+        <Grid item xs={12} md={6} lg={4}>
           <Widget title="Notification Types Examples" disableWidgetMenu>
             <Notification
               className={classes.notificationItem}
@@ -289,8 +221,8 @@ export default function NotificationsPage(props) {
               color="info"
             />
           </Widget>
-        </Grid> */}
-        {/* <Grid item xs={12} md={6} lg={4}>
+        </Grid>
+        <Grid item xs={12} md={6} lg={4}>
           <Widget title="Notification Types Examples" disableWidgetMenu>
             <Notification
               className={classes.notificationItem}
@@ -329,8 +261,8 @@ export default function NotificationsPage(props) {
               color="info"
             />
           </Widget>
-        </Grid> */}
-        {/* <Grid item xs={12} md={6} lg={4}>
+        </Grid>
+        <Grid item xs={12} md={6} lg={4}>
           <Widget title="Notification Types Examples" disableWidgetMenu>
             <Notification
               className={classes.notificationItem}
@@ -375,10 +307,10 @@ export default function NotificationsPage(props) {
               color="info"
             />
           </Widget>
-        </Grid> */}
+        </Grid>
       </Grid>
     </>
-  ); 
+  );
 
   // #############################################################
   function sendNotification(componentProps, options) {
@@ -432,7 +364,7 @@ export default function NotificationsPage(props) {
       default:
         componentProps = {
           type: "shipped",
-          message: "The order was confirmed!",
+          message: "The item was shipped",
           variant: "contained",
           color: "success",
         };

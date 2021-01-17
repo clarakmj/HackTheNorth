@@ -5,7 +5,7 @@ import {
   Select,
   OutlinedInput,
   MenuItem,
-  Button
+  Button, Menu,
 } from "@material-ui/core";
 import { useTheme } from "@material-ui/styles";
 import {
@@ -33,6 +33,7 @@ import { Typography } from "../../components/Wrappers";
 import Dot from "../../components/Sidebar/components/Dot";
 import Table from "./components/Table/Table";
 import BigStat from "./components/BigStat/BigStat";
+import * as Icons from "@material-ui/icons";
 
 const mainChartData = getMainChartData();
 const PieChartData = [
@@ -43,6 +44,16 @@ const PieChartData = [
 ];
 
 export default function Dashboard(props) {
+  const [anchorEl, setAnchorEl] = React.useState(null)
+
+  const handleClick = (e) => {
+    setAnchorEl(e.currentTarget)
+  }
+
+  const handleClose = () => {
+    setAnchorEl(null)
+  }
+
   var classes = useStyles();
   var theme = useTheme();
 
@@ -51,7 +62,31 @@ export default function Dashboard(props) {
 
   return (
     <>
-      <PageTitle title="Dashboard" />
+
+      <PageTitle title="Dashboard" button={(
+        <>
+          <Button
+            variant="contained"
+            size="medium"
+            color="secondary"
+            onClick={e => handleClick(e)}
+          >
+            Actions
+          </Button>
+          <Menu
+            id="simple-menu"
+            anchorEl={anchorEl}
+            keepMounted
+            open={Boolean(anchorEl)}
+            onClose={handleClose}
+          >
+            <MenuItem onClick={handleClose}><Icons.Add style={{marginRight: 16}}/> Add Patient</MenuItem>
+            <MenuItem onClick={handleClose}><Icons.PeopleOutline style={{marginRight: 16}}/>Refer Patient</MenuItem>
+            <MenuItem onClick={handleClose}><Icons.Home style={{marginRight: 16}}/>Discharge Patient</MenuItem>
+            <MenuItem onClick={handleClose}><Icons.Delete style={{marginRight: 16}}/> Remove Patient</MenuItem>
+          </Menu>
+        </>
+      )}/>
       <Grid container spacing={4}>
 
         <Grid item xs={12}>
