@@ -189,10 +189,27 @@ export default function IconsPage() {
           </Grid>
             </Grid>
           </div>
-
-
         )}
+    
       </Paper>
-    </>
-  );
+          <div></div>
+      <Grid item xs={12}>
+        <Widget title="New Documentation Entry" disableWidgetMenu>
+            <div className={classes.layoutContainer}>
+
+            <Button
+                variant="contained"
+                color="success"
+
+                className={classnames(classes.notificationCallButton)}
+              >
+                Confirm Entry 
+              </Button>
+        </div>
+        </Widget>
+        </Grid>
+        </>
+    );
+
+  
 }
