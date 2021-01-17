@@ -53,6 +53,7 @@ export default function NotificationsPage(props) {
   // local
   var [notificationsPosition, setNotificationPosition] = useState(2);
   var [errorToastId, setErrorToastId] = useState(null);
+  var [OrderValue, setOrderValue] = useState("");
 
   return (
     <>
@@ -83,9 +84,24 @@ export default function NotificationsPage(props) {
         <Grid item xs={12}>
         <Widget title="New Order Entry" disableWidgetMenu>
             <div className={classes.layoutContainer}>
-            <input type="text" placeholder="Input order" id="myInput" width="2400" height="170"></input>
+            // <input type="text" placeholder="Input order" id="myInput" width="2400" height="170"></input>
            
-         
+            <form >Order Information
+              <TextField
+                id="email"
+                InputProps={{
+                  classes: {
+                    underline: classes.textFieldUnderline,
+                    input: classes.textField,
+                  },
+                }}
+                value={OrderValue}
+                onChange={e => setOrderValue(e.target.value)}
+                margin="normal"
+                type="firstName"
+                fullWidth
+              />
+              </form>
 
             <Button
                 variant="contained"
