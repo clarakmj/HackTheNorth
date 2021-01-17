@@ -1,106 +1,27 @@
-# React Material Admin — Material-UI Dashboard Template
+## Inspiration
 
-Built with [React](https://facebook.github.io/react/), [Material-UI](https://material-ui.com), [React Router](https://reacttraining.com/react-router/).
-**No jQuery and Bootstrap!**
+From having worked in Canadian healthcare, we know what kind of challenges healthcare providers encounter when managing patients from all over the province. There are 18 health authorities in Quebec,14 in Ontario, 7 in British Columbia, 8 in Northwest Territories, to list a few. When patients move around or go through compassionate transfers, there is often miscommunication between health authorities due to inconsistencies in patient management systems. Did you know many hospitals are still use paper-based charting? We wanted to create a hub that would act as a one-stop shop for everything related to patient care in order to bridge these gaps. The hope is that healthcare providers would no longer be missing any critical patient documentation, or be unaware of important patient details.
 
-**This version uses React 16.8.6, React Router v5, MaterialUI v4, built with React Hooks and React Context (No Redux)**
+## What it does
 
-[Demo](https://flatlogic.com/admin-dashboards/react-material-admin/demo). Use any credentials to log in.
+MedHub allows you to login using your own health authority credentials. You can view a list of all your patient assignments, from which you'd select a patient. Then using the sidebar, you can view patient details such as alerts or code status, admit new patients, enter new orders, chart, refer to specialists, view results, administer medications, or discharge. There is also a support option that should hold policies and guidelines by health authority, as they often vary from one to the next. 
 
-[![image](https://user-images.githubusercontent.com/24964748/55800639-df780300-5adc-11e9-84b7-7c2437088516.png)](https://flatlogic.com/admin-dashboards/react-material-admin/demo)
+## How we built it
 
-## Full Version
+We used a Flatlogic template to build our base off from, then we got to working on manipulating various React components to customize our hospital management app. The project uses React, React Hooks, React Context, React Router v5, Material-UI v4, Modular Architecture, and CSS-in-JS styles.
 
-This is a limited version of [**Full React Material Admin**](https://flatlogic.com/templates/react-material-admin-full/demo) with more components, pages and theme support.
+## Challenges we ran into
 
-## Features
+Due to logistical difficulties, we had begun our journey late into the hackathon. However, we were determined to get as much of the hospital system app up and going. Neither of us were very familiar with using React, but we were keen to learn. We had difficulty trying to implement all the functionality that we had initially planned out, and realized we'd only have time to layout some of the pages. For this reason, we were unfortunately unable to finish the project.
 
-- React (**16.8.6**)
-- React Hooks
-- React Context
-- **No jQuery and Bootstrap!**
-- Mobile friendly layout (responsive)
-- Create-react-app under the hood
-- React Router v5
-- Material-UI v4
-- Modular Architecture
-- CSS-in-JS styles
-- Webpack build
-- Stylish, clean, responsive layout
-- Authentication
+## Accomplishments that we're proud of
 
-## Pages
+Regardless of the product at the time of submission, we are both proud to say that we continued to persevere through the challenges to maximize our learning throughout the project. We are happy to see aspects of the project come to life, albeit limited at this time. 
 
-We have implemented some basic pages, so you can see our template in action.
+## What we learned
 
-- Dashboard
-- Typography
-- Tables
-- Notifications
-- Charts
-- Icons
-- Maps
-- Login
-- Error
+The biggest lesson that we learned through this project was the enormous amount of time and planning that goes into implementing a hospital management system. As if this wasn't a big enough challenge, there is a whole other aspect of integrating data from multiple health authorities and merging them into one central system. This definitely puts a deeper perspective into the healthcare industry. 
 
-## Quick Start
+## What's next for MedHub
 
-#### 1. Get the latest version
-
-You can start by cloning the latest version of React Dashboard on your
-local machine by running:
-
-```shell
-$ git clone https://github.com/flatlogic/react-material-admin.git MyApp
-$ cd MyApp
-```
-
-#### 2. Run `yarn install`
-
-This will install both run-time project dependencies and developer tools listed
-in [package.json](package.json) file.
-
-#### 3. Run `yarn start`
-
-Runs the app in the development mode.
-
-Open http://localhost:3000 to view it in the browser. Whenever you modify any of the source files inside the `/src` folder,
-the module bundler ([Webpack](http://webpack.github.io/)) will recompile the
-app on the fly and refresh all the connected browsers.
-
-#### 4. Run `yarn build`
-
-Builds the app for production to the build folder.
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.
-Your app is ready to be deployed!
-
-## Support
-
-For any additional information please refer to [Flatlogic homepage](https://flatlogic.com).
-
-## How can I support developers?
-
-- Star our GitHub repo :star:
-- [Tweet about it](https://twitter.com/intent/tweet?text=Amazing%20dashboard%20built%20with%20NodeJS,%20React%20and%20Bootstrap!&url=https://github.com/flatlogic/react-material-template&via=flatlogic).
-- Create pull requests, submit bugs, suggest new features or documentation updates :wrench:
-- Follow [@flatlogic on Twitter](https://twitter.com/flatlogic).
-- Subscribe to Flatlogic newsletter at [flatlogic.com](https://flatlogic.com/)
-- Like our page on [Facebook](https://www.facebook.com/flatlogic/) :thumbsup:
-
-## More from Flatlogic
-
-- [React Native Starter](https://github.com/flatlogic/react-native-starter) - 🚀 A powerful react native starter template that bootstraps development of your mobile application
-- [Sing App](https://github.com/flatlogic/sing-app) - 💥 Free and open-source admin dashboard template built with Bootstrap 4
-- [Awesome Bootstrap Checkboxes & Radios](https://github.com/flatlogic/awesome-bootstrap-checkbox) - ✅ Pure css way to make inputs look prettier
-- [React Dashboard](https://github.com/flatlogic/react-dashboard) - 🔥 React Dashboard - isomorphic admin dashboard template with GraphQL
-- [Light Blue Dashboard](https://github.com/flatlogic/light-blue-dashboard) - 💦 Free and open-source admin dashboard template built with Bootstrap
-
-## Premium themes
-
-Looking for premium themes and templates? Check out more [admin dashboard templates at flatlogic.com](https://flatlogic.com/admin-dashboards).
-
-## License
-
-[MIT](https://github.com/flatlogic/react-material-dashboard/blob/master/LICENSE.txt).
+After Hack the North, we would love to continue our project to see to its completion. For starts, we would finish implementing the rest of the layout for the entire application. Then we would work on completing all the necessary features to each section, such as the ability to administer medications at specific times, to chart patient assessments, to refer patients to specialists, or to discharge a patient home. 
