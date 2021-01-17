@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Grid } from "@material-ui/core";
+import { Grid, TextField } from "@material-ui/core";
 import { Close as CloseIcon } from "@material-ui/icons";
 import { ToastContainer, toast } from "react-toastify";
 import SyntaxHighlighter from "react-syntax-highlighter";
@@ -83,7 +83,24 @@ export default function NotificationsPage(props) {
         <Grid item xs={12}>
         <Widget title="New Order Entry" disableWidgetMenu>
             <div className={classes.layoutContainer}>
+            <input type="text" placeholder="Input order" id="myInput" width="2400" height="170"></input>
+           
             
+            {/* <TextField
+              id="password"
+              InputProps={{
+                classes: {
+                  underline:classes.textFieldUnderline,
+                  input: classes.TextField,
+                },
+              }}
+              value={passwordValue}
+              onChange={e => setPasswordValue(e.target.value)}
+              margin="normal"
+              placeholder="Password"
+              type="password"
+              fullWidth/> */}
+
             <Button
                 variant="contained"
                 color="success"
@@ -415,7 +432,7 @@ export default function NotificationsPage(props) {
       default:
         componentProps = {
           type: "shipped",
-          message: "The item was shipped",
+          message: "The order was confirmed!",
           variant: "contained",
           color: "success",
         };
