@@ -84,8 +84,8 @@ export default function NotificationsPage(props) {
         <Grid item xs={12}>
         <Widget title="New Order Entry" disableWidgetMenu>
             <div className={classes.layoutContainer}>
-             {/* <input type="text" placeholder="Input order" id="myInput" width="2400" height="170"></input>
-            */}
+            // <input type="text" placeholder="Input order" id="myInput" width="2400" height="170"></input>
+           
             <form >Order Information
               <TextField
                 id="email"

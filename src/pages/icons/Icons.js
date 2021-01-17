@@ -20,6 +20,44 @@ import PageTitle from "../../components/PageTitle/PageTitle";
 
 // icons sets
 import "font-awesome/css/font-awesome.min.css";
+// #######################################
+
+// import {
+//   LinearProgress,
+//   Select,
+//   OutlinedInput,
+
+// } from "@material-ui/core";
+// import { useTheme } from "@material-ui/styles";
+// import {
+//   ResponsiveContainer,
+//   ComposedChart,
+//   AreaChart,
+//   LineChart,
+//   Line,
+//   Area,
+//   PieChart,
+//   Pie,
+//   Cell,
+//   YAxis,
+//   XAxis,
+// } from "recharts";
+
+// // components
+// import mock from "./mock";
+// import Widget from "../../components/Widget";
+// import Dot from "../../components/Sidebar/components/Dot";
+// import Table from "./components/Table/Table";
+// import BigStat from "./components/BigStat/BigStat";
+
+// const mainChartData = getMainChartData();
+// const PieChartData = [
+//   { name: "Group A", value: 400, color: "primary" },
+//   { name: "Group B", value: 300, color: "secondary" },
+//   { name: "Group C", value: 300, color: "warning" },
+//   { name: "Group D", value: 200, color: "success" },
+// ];
+
 
 export default function IconsPage() {
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -36,7 +74,11 @@ export default function IconsPage() {
 
   // local
   var [activeTabId, setActiveTabId] = useState(0);
+  var classes = useStyles();
+  //var theme = useTheme();
 
+  // local
+  //var [mainChartState, setMainChartState] = useState("monthly");
   
 
   return (
@@ -80,7 +122,9 @@ export default function IconsPage() {
         {activeTabId === 0 && (
           <div>
             <Grid container spacing={2} className="icon-list">
-              
+            {/* // ====================================================== */}
+            
+        
             </Grid>
           </div>
         )}
@@ -88,6 +132,7 @@ export default function IconsPage() {
         {activeTabId === 1 && (
           <div>
             <Grid container spacing={2} className="icon-list">
+            {/* // ====================================================== */}
               
             </Grid>
           </div>
@@ -97,6 +142,7 @@ export default function IconsPage() {
         {activeTabId === 2 && (
           <div>
             <Grid container spacing={2} className="icon-list">
+            {/* // ====================================================== */}
               
             </Grid>
           </div>
