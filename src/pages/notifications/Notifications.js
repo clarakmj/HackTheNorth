@@ -81,12 +81,61 @@ export default function NotificationsPage(props) {
 
         
 
-        <Grid item xs={12}>
+        <Grid item lg={3} md={4} sm={6} xs={12}>
         <Widget title="New Order Entry" disableWidgetMenu>
             <div className={classes.layoutContainer}>
              {/* <input type="text" placeholder="Input order" id="myInput" width="2400" height="170"></input>
             */}
-            <form >Order Information
+            <form >Order Info
+              <TextField
+                id="email"
+                InputProps={{
+                  classes: {
+                    underline: classes.textFieldUnderline,
+                    input: classes.textField,
+                  },
+                }}
+                value={OrderValue}
+                onChange={e => setOrderValue(e.target.value)}
+                margin="normal"
+                type="firstName"
+                fullWidth
+              />
+              </form>
+
+              <form >Date Issued
+              <TextField
+                id="email"
+                InputProps={{
+                  classes: {
+                    underline: classes.textFieldUnderline,
+                    input: classes.textField,
+                  },
+                }}
+                value={OrderValue}
+                onChange={e => setOrderValue(e.target.value)}
+                margin="normal"
+                type="firstName"
+                fullWidth
+              />
+              </form>
+              <form >Ending Date 
+              <TextField
+                id="email"
+                InputProps={{
+                  classes: {
+                    underline: classes.textFieldUnderline,
+                    input: classes.textField,
+                  },
+                }}
+                value={OrderValue}
+                onChange={e => setOrderValue(e.target.value)}
+                margin="normal"
+                type="firstName"
+                fullWidth
+              />
+              </form>
+              <form > Order Status
               <TextField
                 id="email"
                 InputProps={{
