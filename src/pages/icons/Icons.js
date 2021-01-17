@@ -146,7 +146,22 @@ export default function IconsPage() {
           <div>
             <Grid container spacing={2} className="icon-list">
             {/* // ====================================================== */}
-              
+            <Grid container spacing={4}>
+             <Grid item xs={12} md={6}>
+              <Widget title="Patient Monster, Cookie" disableWidgetMenu>
+                <div className={classes.dashedBorder}>
+                 <Button
+                 variant="contained"
+                 color="success"
+                 alignment="center"
+                 className={classnames(classes.notificationCallButton)}
+                 >
+                  View CT Scan 
+                 </Button>
+                </div>
+               </Widget>
+            </Grid>
+          </Grid>
             </Grid>
           </div>
 
@@ -156,7 +171,22 @@ export default function IconsPage() {
           <div>
             <Grid container spacing={2} className="icon-list">
             {/* // ====================================================== */}
-              
+            <Grid container spacing={4}>
+             <Grid item xs={12} md={6}>
+              <Widget title="Patient Monster, Cookie" disableWidgetMenu>
+                <div className={classes.dashedBorder}>
+                 <Button
+                 variant="contained"
+                 color="success"
+                 className={classnames(classes.notificationCallButton)}
+                 >
+                  View Lab Work 
+                 </Button>
+            
+                </div>
+               </Widget>
+            </Grid>
+          </Grid>
             </Grid>
           </div>
 
