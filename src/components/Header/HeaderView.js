@@ -57,24 +57,24 @@ const messages = [
 ];
 
 const notifications = [
-  { id: 0, color: "warning", message: "Check out this awesome ticket" },
+  { id: 0, color: "warning", message: "Pancreaticoduodenectomy scheduled for 1100" },
   {
     id: 1,
     color: "success",
     type: "info",
-    message: "What is the best way to get ..."
+    message: "Patient in 1024 discharged at 0800"
   },
   {
     id: 2,
     color: "secondary",
     type: "notification",
-    message: "This is just a simple notification"
+    message: "Please confirm your methadone prescription for patient in 0992"
   },
   {
     id: 3,
     color: "primary",
-    type: "e-commerce",
-    message: "12 new orders has arrived today"
+    type: "notification",
+    message: "12 new admissions has arrived today"
   }
 ];
 

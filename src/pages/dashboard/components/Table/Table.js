@@ -10,9 +10,9 @@ import {
 import useStyles from "../../styles";
 
 const states = {
-  sent: "success",
-  pending: "warning",
-  declined: "secondary",
+  active: "active",
+  pending: "pending",
+  discharge: "discharge",
 };
 
 export default function TableComponent({ data }) {
@@ -30,14 +30,14 @@ export default function TableComponent({ data }) {
         </TableRow>
       </TableHead>
       <TableBody>
-        {data.map(({ id, name, email, product, price, date, city, status }) => (
+        {data.map(({ id, name, admit, location, age, DOB, alert, status }) => (
           <TableRow key={id}>
             <TableCell className="pl-3 fw-normal">{name}</TableCell>
-            <TableCell>{email}</TableCell>
-            <TableCell>{product}</TableCell>
-            <TableCell>{price}</TableCell>
-            <TableCell>{date}</TableCell>
-            <TableCell>{city}</TableCell>
+            <TableCell>{admit}</TableCell>
+            <TableCell>{location}</TableCell>
+            <TableCell>{age}</TableCell>
+            <TableCell>{DOB}</TableCell>
+            <TableCell>{alert}</TableCell>
             <TableCell>
               <Chip label={status} classes={{root: classes[states[status.toLowerCase()]]}}/>
             </TableCell>

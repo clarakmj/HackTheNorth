@@ -40,29 +40,29 @@ const messages = [
   {
     id: 0,
     variant: "warning",
-    name: "Jane Hew",
-    message: "Hey! How is it going?",
+    name: "Dr. Jane Doe",
+    message: "Hey! About that patient in bed 2604...",
     time: "9:32",
   },
   {
     id: 1,
     variant: "success",
-    name: "Lloyd Brown",
-    message: "Check out my new Dashboard",
+    name: "Mr. Lloyd Brown",
+    message: "Remember the board meeting today at noon.",
     time: "9:18",
   },
   {
     id: 2,
     variant: "primary",
-    name: "Mark Winstein",
-    message: "I want rearrange the appointment",
+    name: "Mark Winstein RN",
+    message: "I can rearrange the surgery to another time.",
     time: "9:15",
   },
   {
     id: 3,
     variant: "secondary",
     name: "Liana Dutti",
-    message: "Good news from sale department",
+    message: "Good news from HR department",
     time: "9:09",
   },
 ];
@@ -140,7 +140,6 @@ export default function Header(props) {
           React Material Admin
         </Typography>
         <div className={classes.grow} />
-        <Button component={Link} href="https://flatlogic.com/templates/react-material-admin-full" variant={"outlined"} color={"secondary"} className={classes.purchaseBtn}>Unlock full version</Button>
         <div
           className={classNames(classes.search, {
             [classes.searchFocused]: isSearchOpen,

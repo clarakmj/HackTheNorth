@@ -1,0 +1,137 @@
+<html>
+<head>
+<title>Dashboard.js</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #ff92bb; font-weight: bold;}
+.s1 { color: #ececee;}
+.s2 { color: #ffffff;}
+.s3 { color: #40bf77;}
+.s4 { color: #6f7a86; font-style: italic;}
+.s5 { color: #f9846c;}
+.s6 { color: #55616c;}
+.s7 { color: #f3c811; font-style: italic;}
+.s8 { color: #ffffff; font-style: italic;}
+</style>
+</head>
+<body bgcolor="#202831">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+Dashboard.js</font>
+</center></td></tr></table>
+<pre><span class="s0">import </span><span class="s1">React</span><span class="s2">, { </span><span class="s1">useState </span><span class="s2">} </span><span class="s1">from </span><span class="s3">&quot;react&quot;;</span>
+<span class="s0">import </span><span class="s2">{</span>
+  <span class="s1">Grid</span><span class="s2">,</span>
+  <span class="s1">LinearProgress</span><span class="s2">,</span>
+  <span class="s1">Select</span><span class="s2">,</span>
+  <span class="s1">OutlinedInput</span><span class="s2">,</span>
+  <span class="s1">MenuItem</span><span class="s2">,</span>
+  <span class="s1">Button</span>
+<span class="s2">} </span><span class="s1">from </span><span class="s3">&quot;@material-ui/core&quot;;</span>
+<span class="s0">import </span><span class="s2">{ </span><span class="s1">useTheme </span><span class="s2">} </span><span class="s1">from </span><span class="s3">&quot;@material-ui/styles&quot;;</span>
+<span class="s0">import </span><span class="s2">{</span>
+  <span class="s1">ResponsiveContainer</span><span class="s2">,</span>
+  <span class="s1">ComposedChart</span><span class="s2">,</span>
+  <span class="s1">AreaChart</span><span class="s2">,</span>
+  <span class="s1">LineChart</span><span class="s2">,</span>
+  <span class="s1">Line</span><span class="s2">,</span>
+  <span class="s1">Area</span><span class="s2">,</span>
+  <span class="s1">PieChart</span><span class="s2">,</span>
+  <span class="s1">Pie</span><span class="s2">,</span>
+  <span class="s1">Cell</span><span class="s2">,</span>
+  <span class="s1">YAxis</span><span class="s2">,</span>
+  <span class="s1">XAxis</span><span class="s2">,</span>
+<span class="s2">} </span><span class="s1">from </span><span class="s3">&quot;recharts&quot;;</span>
+
+<span class="s4">// styles</span>
+<span class="s0">import </span><span class="s1">useStyles from </span><span class="s3">&quot;./styles&quot;;</span>
+
+<span class="s4">// components</span>
+<span class="s0">import </span><span class="s1">mock from </span><span class="s3">&quot;./mock&quot;;</span>
+<span class="s0">import </span><span class="s1">Widget from </span><span class="s3">&quot;../../components/Widget&quot;;</span>
+<span class="s0">import </span><span class="s1">PageTitle from </span><span class="s3">&quot;../../components/PageTitle&quot;;</span>
+<span class="s0">import </span><span class="s2">{ </span><span class="s1">Typography </span><span class="s2">} </span><span class="s1">from </span><span class="s3">&quot;../../components/Wrappers&quot;;</span>
+<span class="s0">import </span><span class="s1">Dot from </span><span class="s3">&quot;../../components/Sidebar/components/Dot&quot;;</span>
+<span class="s0">import </span><span class="s1">Table from </span><span class="s3">&quot;./components/Table/Table&quot;;</span>
+<span class="s0">import </span><span class="s1">BigStat from </span><span class="s3">&quot;./components/BigStat/BigStat&quot;;</span>
+
+<span class="s0">const </span><span class="s1">mainChartData </span><span class="s3">= </span><span class="s1">getMainChartData</span><span class="s2">()</span><span class="s3">;</span>
+<span class="s0">const </span><span class="s1">PieChartData </span><span class="s3">= </span><span class="s2">[</span>
+  <span class="s2">{ </span><span class="s1">name</span><span class="s3">: &quot;Group A&quot;</span><span class="s2">, </span><span class="s1">value</span><span class="s3">: </span><span class="s5">400</span><span class="s2">, </span><span class="s1">color</span><span class="s3">: &quot;primary&quot; </span><span class="s2">},</span>
+  <span class="s2">{ </span><span class="s1">name</span><span class="s3">: &quot;Group B&quot;</span><span class="s2">, </span><span class="s1">value</span><span class="s3">: </span><span class="s5">300</span><span class="s2">, </span><span class="s1">color</span><span class="s3">: &quot;secondary&quot; </span><span class="s2">},</span>
+  <span class="s2">{ </span><span class="s1">name</span><span class="s3">: &quot;Group C&quot;</span><span class="s2">, </span><span class="s1">value</span><span class="s3">: </span><span class="s5">300</span><span class="s2">, </span><span class="s1">color</span><span class="s3">: &quot;warning&quot; </span><span class="s2">},</span>
+  <span class="s2">{ </span><span class="s1">name</span><span class="s3">: &quot;Group D&quot;</span><span class="s2">, </span><span class="s1">value</span><span class="s3">: </span><span class="s5">200</span><span class="s2">, </span><span class="s1">color</span><span class="s3">: &quot;success&quot; </span><span class="s2">},</span>
+<span class="s2">]</span><span class="s3">;</span>
+
+<span class="s0">export default function </span><span class="s1">Dashboard</span><span class="s2">(</span><span class="s1">props</span><span class="s2">) {</span>
+  <span class="s0">var </span><span class="s1">classes </span><span class="s3">= </span><span class="s1">useStyles</span><span class="s2">()</span><span class="s3">;</span>
+  <span class="s0">var </span><span class="s1">theme </span><span class="s3">= </span><span class="s1">useTheme</span><span class="s2">()</span><span class="s3">;</span>
+
+  <span class="s4">// local</span>
+  <span class="s0">var </span><span class="s2">[</span><span class="s1">mainChartState</span><span class="s2">, </span><span class="s1">setMainChartState</span><span class="s2">] </span><span class="s3">= </span><span class="s1">useState</span><span class="s2">(</span><span class="s3">&quot;monthly&quot;</span><span class="s2">)</span><span class="s3">;</span>
+
+  <span class="s0">return </span><span class="s2">(</span>
+    <span class="s6">&lt;&gt;</span>
+      <span class="s6">&lt;</span><span class="s0">PageTitle </span><span class="s7">title</span><span class="s3">=&quot;Dashboard&quot; </span><span class="s6">/&gt;</span>
+      <span class="s6">&lt;</span><span class="s0">Grid </span><span class="s7">container spacing</span><span class="s3">=</span><span class="s2">{</span><span class="s5">4</span><span class="s2">}</span><span class="s6">&gt;</span>
+
+        <span class="s6">&lt;</span><span class="s0">Grid </span><span class="s7">item xs</span><span class="s3">=</span><span class="s2">{</span><span class="s5">12</span><span class="s2">}</span><span class="s6">&gt;</span>
+
+        <span class="s6">&lt;/</span><span class="s0">Grid</span><span class="s6">&gt;</span>
+        <span class="s6">&lt;</span><span class="s0">Grid </span><span class="s7">item xs</span><span class="s3">=</span><span class="s2">{</span><span class="s5">12</span><span class="s2">}</span><span class="s6">&gt;</span>
+          <span class="s6">&lt;</span><span class="s0">Widget</span>
+            <span class="s7">title</span><span class="s3">=&quot;Patient List&quot;</span>
+            <span class="s7">upperTitle</span>
+            <span class="s7">noBodyPadding</span>
+            <span class="s7">bodyClass</span><span class="s3">=</span><span class="s2">{</span><span class="s1">classes</span><span class="s8">.</span><span class="s1">tableWidget</span><span class="s2">}</span>
+          <span class="s6">&gt;</span>
+            <span class="s6">&lt;</span><span class="s0">Table </span><span class="s7">data</span><span class="s3">=</span><span class="s2">{</span><span class="s1">mock</span><span class="s8">.</span><span class="s1">table</span><span class="s2">} </span><span class="s6">/&gt;</span>
+          <span class="s6">&lt;/</span><span class="s0">Widget</span><span class="s6">&gt;</span>
+        <span class="s6">&lt;/</span><span class="s0">Grid</span><span class="s6">&gt;</span>
+      <span class="s6">&lt;/</span><span class="s0">Grid</span><span class="s6">&gt;</span>
+    <span class="s6">&lt;/&gt;</span>
+  <span class="s2">)</span><span class="s3">;</span>
+<span class="s2">}</span>
+
+<span class="s4">// #######################################################################</span>
+<span class="s0">function </span><span class="s1">getRandomData</span><span class="s2">(</span><span class="s1">length</span><span class="s2">, </span><span class="s1">min</span><span class="s2">, </span><span class="s1">max</span><span class="s2">, </span><span class="s1">multiplier </span><span class="s3">= </span><span class="s5">10</span><span class="s2">, </span><span class="s1">maxDiff </span><span class="s3">= </span><span class="s5">10</span><span class="s2">) {</span>
+  <span class="s0">var </span><span class="s1">array </span><span class="s3">= </span><span class="s0">new </span><span class="s1">Array</span><span class="s2">(</span><span class="s1">length</span><span class="s2">)</span><span class="s8">.</span><span class="s1">fill</span><span class="s2">()</span><span class="s3">;</span>
+  <span class="s0">let </span><span class="s1">lastValue</span><span class="s3">;</span>
+
+  <span class="s0">return </span><span class="s1">array</span><span class="s8">.</span><span class="s1">map</span><span class="s2">((</span><span class="s1">item</span><span class="s2">, </span><span class="s1">index</span><span class="s2">) </span><span class="s1">=&gt; </span><span class="s2">{</span>
+    <span class="s0">let </span><span class="s1">randomValue </span><span class="s3">= </span><span class="s1">Math</span><span class="s8">.</span><span class="s1">floor</span><span class="s2">(</span><span class="s1">Math</span><span class="s8">.</span><span class="s1">random</span><span class="s2">() </span><span class="s3">* </span><span class="s1">multiplier </span><span class="s3">+ </span><span class="s5">1</span><span class="s2">)</span><span class="s3">;</span>
+
+    <span class="s0">while </span><span class="s2">(</span>
+      <span class="s1">randomValue </span><span class="s3">&lt;= </span><span class="s1">min </span><span class="s3">||</span>
+      <span class="s1">randomValue </span><span class="s3">&gt;= </span><span class="s1">max </span><span class="s3">||</span>
+      <span class="s2">(</span><span class="s1">lastValue </span><span class="s3">&amp;&amp; </span><span class="s1">randomValue </span><span class="s3">- </span><span class="s1">lastValue </span><span class="s3">&gt; </span><span class="s1">maxDiff</span><span class="s2">)</span>
+    <span class="s2">) {</span>
+      <span class="s1">randomValue </span><span class="s3">= </span><span class="s1">Math</span><span class="s8">.</span><span class="s1">floor</span><span class="s2">(</span><span class="s1">Math</span><span class="s8">.</span><span class="s1">random</span><span class="s2">() </span><span class="s3">* </span><span class="s1">multiplier </span><span class="s3">+ </span><span class="s5">1</span><span class="s2">)</span><span class="s3">;</span>
+    <span class="s2">}</span>
+
+    <span class="s1">lastValue </span><span class="s3">= </span><span class="s1">randomValue</span><span class="s3">;</span>
+
+    <span class="s0">return </span><span class="s2">{ </span><span class="s1">value</span><span class="s3">: </span><span class="s1">randomValue </span><span class="s2">}</span><span class="s3">;</span>
+  <span class="s2">})</span><span class="s3">;</span>
+<span class="s2">}</span>
+
+<span class="s0">function </span><span class="s1">getMainChartData</span><span class="s2">() {</span>
+  <span class="s0">var </span><span class="s1">resultArray </span><span class="s3">= </span><span class="s2">[]</span><span class="s3">;</span>
+  <span class="s0">var </span><span class="s1">tablet </span><span class="s3">= </span><span class="s1">getRandomData</span><span class="s2">(</span><span class="s5">31</span><span class="s2">, </span><span class="s5">3500</span><span class="s2">, </span><span class="s5">6500</span><span class="s2">, </span><span class="s5">7500</span><span class="s2">, </span><span class="s5">1000</span><span class="s2">)</span><span class="s3">;</span>
+  <span class="s0">var </span><span class="s1">desktop </span><span class="s3">= </span><span class="s1">getRandomData</span><span class="s2">(</span><span class="s5">31</span><span class="s2">, </span><span class="s5">1500</span><span class="s2">, </span><span class="s5">7500</span><span class="s2">, </span><span class="s5">7500</span><span class="s2">, </span><span class="s5">1500</span><span class="s2">)</span><span class="s3">;</span>
+  <span class="s0">var </span><span class="s1">mobile </span><span class="s3">= </span><span class="s1">getRandomData</span><span class="s2">(</span><span class="s5">31</span><span class="s2">, </span><span class="s5">1500</span><span class="s2">, </span><span class="s5">7500</span><span class="s2">, </span><span class="s5">7500</span><span class="s2">, </span><span class="s5">1500</span><span class="s2">)</span><span class="s3">;</span>
+
+  <span class="s0">for </span><span class="s2">(</span><span class="s0">let </span><span class="s1">i </span><span class="s3">= </span><span class="s5">0</span><span class="s3">; </span><span class="s1">i </span><span class="s3">&lt; </span><span class="s1">tablet</span><span class="s8">.</span><span class="s1">length</span><span class="s3">; </span><span class="s1">i</span><span class="s3">++</span><span class="s2">) {</span>
+    <span class="s1">resultArray</span><span class="s8">.</span><span class="s1">push</span><span class="s2">({</span>
+      <span class="s1">tablet</span><span class="s3">: </span><span class="s1">tablet</span><span class="s2">[</span><span class="s1">i</span><span class="s2">]</span><span class="s8">.</span><span class="s1">value</span><span class="s2">,</span>
+      <span class="s1">desktop</span><span class="s3">: </span><span class="s1">desktop</span><span class="s2">[</span><span class="s1">i</span><span class="s2">]</span><span class="s8">.</span><span class="s1">value</span><span class="s2">,</span>
+      <span class="s1">mobile</span><span class="s3">: </span><span class="s1">mobile</span><span class="s2">[</span><span class="s1">i</span><span class="s2">]</span><span class="s8">.</span><span class="s1">value</span><span class="s2">,</span>
+    <span class="s2">})</span><span class="s3">;</span>
+  <span class="s2">}</span>
+
+  <span class="s0">return </span><span class="s1">resultArray</span><span class="s3">;</span>
+<span class="s2">}</span>
+</pre>
+</body>
+</html>

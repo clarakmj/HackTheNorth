@@ -130,53 +130,53 @@ export default {
   table: [
     {
       id: 0,
-      name: "Mark Otto",
-      email: "ottoto@wxample.com",
-      product: "ON the Road",
-      price: "$25 224.2",
-      date: "11 May 2017",
-      city: "Otsego",
-      status: "Sent"
+      name: "Monster, Cookie",
+      admit: "Diabetic ketoacidosis",
+      location: "South-5",
+      age: "47",
+      DOB: "Nov. 2, 1973",
+      alert: "Flight risk",
+      status: "Active"
     },
     {
       id: 1,
-      name: "Jacob Thornton",
-      email: "thornton@wxample.com",
-      product: "HP Core i7",
-      price: "$1 254.2",
-      date: "4 Jun 2017",
-      city: "Fivepointville",
-      status: "Sent"
+      name: "Potter, Harry",
+      admit: "Grandiose delusion",
+      location: "Psychiatry",
+      age: "41",
+      DOB: "July 31, 1980",
+      alert: "N/A",
+      status: "Active"
     },
     {
       id: 2,
-      name: "Larry the Bird",
-      email: "bird@wxample.com",
-      product: "Air Pro",
-      price: "$1 570.0",
-      date: "27 Aug 2017",
-      city: "Leadville North",
+      name: "Man, Iron",
+      admit: "Metal ingestion",
+      location: "OR 2",
+      age: "48",
+      DOB: "May 29, 1970",
+      alert: "Violence/ Aggression",
       status: "Pending"
     },
     {
       id: 3,
-      name: "Joseph May",
-      email: "josephmay@wxample.com",
-      product: "Version Control",
-      price: "$5 224.5",
-      date: "19 Feb 2018",
-      city: "Seaforth",
-      status: "Declined"
+      name: "Vader, Darth",
+      admit: "Mask suffocation",
+      location: "Triage",
+      age: "22",
+      DOB: "41.9 BBY",
+      alert: "Anaphylaxis",
+      status: "Discharge"
     },
     {
       id: 4,
-      name: "Peter Horadnia",
-      email: "horadnia@wxample.com",
-      product: "Let's Dance",
-      price: "$43 594.7",
-      date: "1 Mar 2018",
-      city: "Hanoverton",
-      status: "Sent"
+      name: "the Great, Gandalf",
+      admit: "General observation",
+      location: "Geriatric",
+      age: "2019",
+      DOB: "February 14, 3019",
+      alert: "Fall risk",
+      status: "Pending"
     }
   ]
 };

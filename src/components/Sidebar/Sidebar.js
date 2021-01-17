@@ -10,6 +10,14 @@ import {
   LibraryBooks as LibraryIcon,
   HelpOutline as FAQIcon,
   ArrowBack as ArrowBackIcon,
+  GroupWork,
+  Face,
+  PeopleOutline,
+  HowToReg,
+  ListAlt,
+  AirlineSeatFlat,
+  HdrWeak,
+  DirectionsWalk,
 } from "@material-ui/icons";
 import { useTheme } from "@material-ui/styles";
 import { withRouter } from "react-router-dom";
@@ -33,35 +41,59 @@ const structure = [
   { id: 0, label: "Dashboard", link: "/app/dashboard", icon: <HomeIcon /> },
   {
     id: 1,
-    label: "Typography",
+    label: "Patient Details",
     link: "/app/typography",
-    icon: <TypographyIcon />,
+    icon: <Face />,
   },
-  { id: 2, label: "Tables", link: "/app/tables", icon: <TableIcon /> },
+  { id: 2, label: "Admission", link: "/app/tables", icon: <AirlineSeatFlat /> },
   {
     id: 3,
-    label: "Notifications",
+    label: "Orders",
     link: "/app/notifications",
     icon: <NotificationsIcon />,
   },
   {
     id: 4,
-    label: "UI Elements",
+    label: "Documentation",
     link: "/app/ui",
     icon: <UIElementsIcon />,
-    children: [
+    /*children: [
       { label: "Icons", link: "/app/ui/icons" },
       { label: "Charts", link: "/app/ui/charts" },
       { label: "Maps", link: "/app/ui/maps" },
-    ],
+    ],*/
+  },
+  {
+    id: 5,
+    label: "Referral",
+    link: "/app/referral",
+    icon: <PeopleOutline />,
+  },
+  {
+    id: 6,
+    label: "Results",
+    link: "/app/results",
+    icon: <ListAlt/>,
+  },
+  {
+    id: 7,
+    label: "Medication",
+    link: "/app/medication",
+    icon: <HdrWeak />,
+  },
+  {
+    id: 8,
+    label: "Discharge",
+    link: "/app/discharge",
+    icon: <DirectionsWalk />,
   },
   { id: 5, type: "divider" },
   { id: 6, type: "title", label: "HELP" },
-  { id: 7, label: "Library", link: "", icon: <LibraryIcon /> },
+  { id: 7, label: "Resources", link: "", icon: <LibraryIcon /> },
   { id: 8, label: "Support", link: "", icon: <SupportIcon /> },
-  { id: 9, label: "FAQ", link: "", icon: <FAQIcon /> },
+  // { id: 9, label: "FAQ", link: "", icon: <FAQIcon /> },
   { id: 10, type: "divider" },
-  { id: 11, type: "title", label: "PROJECTS" },
+  /*{ id: 11, type: "title", label: "PROJECTS" },
   {
     id: 12,
     label: "My recent",
@@ -79,7 +111,7 @@ const structure = [
     label: "Background",
     link: "",
     icon: <Dot size="small" color="secondary" />,
-  },
+  },*/
 ];
 
 function Sidebar({ location }) {
