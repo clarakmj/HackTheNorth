@@ -59,7 +59,7 @@ export default function Dashboard(props) {
         </Grid>
         <Grid item xs={12}>
           <Widget
-            title="Patient List"
+            title="Patient Board"
             upperTitle
             noBodyPadding
             bodyClass={classes.tableWidget}

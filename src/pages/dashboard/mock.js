@@ -131,52 +131,56 @@ export default {
     {
       id: 0,
       name: "Monster, Cookie",
-      admit: "Diabetic ketoacidosis",
+      diagnosis: "Diabetic ketoacidosis",
       location: "South-5",
       age: "47",
       DOB: "Nov. 2, 1973",
       alert: "Flight risk",
-      status: "Active" +
-        "n"
+      code: "DNR M3",
+      status: "Active"
     },
     {
       id: 1,
       name: "Potter, Harry",
-      admit: "Grandiose delusion",
+      diagnosis: "Grandiose delusion",
       location: "Psychiatry",
       age: "41",
       DOB: "July 31, 1980",
       alert: "N/A",
+      code: "Full Code",
       status: "Active"
     },
     {
       id: 2,
       name: "Man, Iron",
-      admit: "Metal ingestion",
+      diagnosis: "Metal ingestion",
       location: "OR 2",
       age: "48",
       DOB: "May 29, 1970",
       alert: "Violence/ Aggression",
+      code: "DNR C2",
       status: "Pending"
     },
     {
       id: 3,
       name: "Vader, Darth",
-      admit: "Mask suffocation",
+      diagnosis: "Mask suffocation",
       location: "Triage",
       age: "22",
       DOB: "41.9 BBY",
       alert: "Anaphylaxis",
+      code: "DNR M3",
       status: "Discharge"
     },
     {
       id: 4,
       name: "the Great, Gandalf",
-      admit: "General observation",
+      diagnosis: "General observation",
       location: "Geriatric",
       age: "2019",
       DOB: "February 14, 3019",
       alert: "Fall risk",
+      code: "DNR M1",
       status: "Pending"
     }
   ]

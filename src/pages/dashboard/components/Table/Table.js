@@ -30,14 +30,15 @@ export default function TableComponent({ data }) {
         </TableRow>
       </TableHead>
       <TableBody>
-        {data.map(({ id, name, admit, location, age, DOB, alert, status }) => (
+        {data.map(({ id, name, diagnosis, location, age, DOB, alert, code, status }) => (
           <TableRow key={id}>
             <TableCell className="pl-3 fw-normal">{name}</TableCell>
-            <TableCell>{admit}</TableCell>
+            <TableCell>{diagnosis}</TableCell>
             <TableCell>{location}</TableCell>
             <TableCell>{age}</TableCell>
             <TableCell>{DOB}</TableCell>
             <TableCell>{alert}</TableCell>
+            <TableCell>{code}</TableCell>
             <TableCell>
               <Chip label={status} classes={{root: classes[states[status.toLowerCase()]]}}/>
             </TableCell>
